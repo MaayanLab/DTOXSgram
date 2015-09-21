@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <base href='/'>
+
+    <title>DTOXSgram</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="static/lib/css/bootstrap.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="static/css/custom.css" rel="stylesheet">
+    <!-- for jquery sliders -->
+    <link href="static/lib/css/jquery-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/lib/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+  <!-- clust instruct container -->
+  <div id='clust_instruct_container' >
+
+    <h1 id='viz_website_title'>DTOXSgram</h1>
+
+    <div id='viz_gmt_labels'></div>
+    <div class='viz_instruct_text'> The clustergram visualizes the top 250 up- and down-regulated genes for each drug-treated cell line. Up- or down-regulated gene expression is shown as red or blue tiles respectively in the matrix. </div>
+    <div class='viz_instruct_text'> Zoom into the clustergram using scroll and reset zoom by double-clicking. Reorder using the reorder buttons or by double-clicking rows or column labels. Change the size of row/colum groups by moving the sliders. </div>
+
+    <h5>Releases</h5>
+    <!-- toggle view -->
+    <div id='toggle_view' class="btn-group" data-toggle="buttons" >
+      <label class="btn btn-warning active order_name">
+        <input type="radio" name="options" id="630" autocomplete="off" checked > June 2015
+      </label>
+      <label class="btn btn-success order_name">
+        <input type="radio" name="options" id="820" autocomplete="off" > August 2015
+      </label>
+    </div>
+
+    <h5>Reorder</h5>
+    <!-- toggle clustergram order -->
+    <div id='toggle_order' class="btn-group" data-toggle="buttons" >
+      <label id='default_order' class="btn btn-primary active order_name">
+        <input type="radio" name="options" id="clust_button" autocomplete="off" checked > Cluster
+      </label>
+      <label class="btn btn-primary order_name">
+        <input type="radio" name="options" id="rank_button" autocomplete="off" > Rank
+      </label>
+      <label class="btn btn-primary order_name">
+        <input type="radio" name="options" id="ini_button" autocomplete="off" > Initial
+      </label>
+    </div>
+
+    <!-- input box for gene search -->
+    <h5>Gene Search</h5>
+    <div id='gene_search_container' class='row'>
+        <input id='gene_search_box' type="text" class="form-control" placeholder="Input Gene" aria-describedby="sizing-addon2">
+        <div id='gene_search_button' class="btn-group" data-toggle="buttons" >
+          <label id='submit_gene_button' class="btn btn-primary active">
+            <input type="radio" name="options" id="" autocomplete="off" checked > Search
+          </label>
+        </div>
+    </div>
+    <h5>Column Colorbar Group Size</h5>
+    <div id="slider_col"></div>
+    <h5>Row Colorbar Group Size</h5>
+    <div id="slider_row"></div>
+
+  </div>
+  <!-- end clust instruct container -->
+
+  <!-- svg_div - visualization will be put here -->
+  <div id='svg_div' class='svg_div' >
+      <h1 id='wait_message'>Please wait ...</h1>
+  </div>
+
+
+  <!-- footer -->
+  <footer id='footer_div' class="footer navbar-fixed-bottom">
+    <div class="row" > 
+      <div class="col-xs-12 footer_section"> 
+        <p class="text-muted">DTOXSgram is being developed by the <a href="http://icahn.mssm.edu/research/labs/maayan-laboratory">Ma'ayan Lab</a> at the <a href="http://icahn.mssm.edu/">Icahn School of Medicine at Mount Sinai</a>. </p>
+      </div>
+    </div>
+  </footer>
+  <!-- end footer -->
+
+  <!-- Required JS Libraries -->
+  <script src="static/lib/js/d3.js"></script>
+  <script src="static/lib/js/jquery-1.11.2.min.js"></script>
+  <script src="static/lib/js/jquery-ui.js"></script>
+  <script src="static/lib/js/bootstrap.min.js"></script>
+  <script src="static/lib/js/underscore-min.js"></script>
+  <script src="static/lib/js/underscore.strings.js"></script>
+
+  <!-- clustergram.js -->
+  <script src='static/js/d3_clustergram.js'></script>
+  <!-- load clustergram -->
+  <script src='static/js/load_clustergram.js'></script>
+
+
+</body>
+
+</html>
