@@ -2,7 +2,7 @@
 function load_clust(inst_view){ $(function() {
 
   // load network
-  d3.json('/static/networks/DTOXS_'+inst_view+'.json', function(network_data){
+  d3.json('static/networks/DTOXS_'+inst_view+'.json', function(network_data){
   // d3.json('/DTOXSgram/static/networks/example_network.json', function(network_data){
 
     // define the outer margins of the visualization
